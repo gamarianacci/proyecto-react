@@ -1,0 +1,17 @@
+nav{
+    background-color: #434343;
+}
+
+.textoClaro{
+    color: #F8F8F8;
+    font-family: "Verdana";
+    font-size: 20px;
+}
+
+.textoClaro:hover{
+    color: #ff9f1a;
+}
+
+.carrito{
+    font-size: 2.5rem;
+}
