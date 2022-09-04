@@ -6,19 +6,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import logo from "../../assets/logo.png";
 import "./NavBar.css";
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (
         <Navbar variant="dark" expand="lg">
             <Container>
-                <img
-                    src={logo}
-                    width="100"
-                    height="100"
-                    className="d-inline-block align-center m-3"
-                    alt="logo"
-                />
-                <Navbar.Brand className="textoClaro fs-1" href="#home">GM COMIDAS</Navbar.Brand>
+                <Navbar.Brand href="#home">
+                    <img
+                        alt="logo"
+                        src={logo}
+                        width="100"
+                        height="100"
+                    />
+                    GM COMIDAS
+                </Navbar.Brand>
+                <CartWidget />
                 <Navbar.Toggle className="textoClaro" aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
@@ -27,9 +30,6 @@ const NavBar = () => {
                         <Nav.Link className="textoClaro" href="#wraps">Wraps</Nav.Link>
                         <Nav.Link className="textoClaro" href="#bebidas">Bebidas</Nav.Link>
                     </Nav>
-                    <a href="">
-                        <i className="bi bi-cart textoClaro carrito"></i>
-                    </a>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

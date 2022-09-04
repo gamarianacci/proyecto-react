@@ -1,0 +1,9 @@
+h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #F7C873;
+    color: #434343;
+    font-size: 3rem;
+    padding: 20px;
+}
