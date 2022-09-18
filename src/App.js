@@ -1,6 +1,7 @@
 import React from "react"
 import NavBar from "./Components/NavBar/NavBar"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
 
 const App = () => {
   const conocerProductos = "¡Conocé nuestros productos!"
@@ -9,7 +10,10 @@ const App = () => {
       <header>
         <NavBar />
       </header>
-      <ItemListContainer greeting={conocerProductos}/>
+      <main>
+        <ItemListContainer greeting={conocerProductos} />
+        <ItemDetailContainer />
+      </main>
     </>
   )
 }
