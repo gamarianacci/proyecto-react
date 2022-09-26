@@ -4,7 +4,7 @@ import "./ItemDetail.css"
 const ItemDetail = ({ item }) => {
     return (
         <div className="detailedItem">
-            <img className="imageDescription" src={item.image}></img>
+            <img className="imageDescription" src={item.image} alt={item.product}></img>
             <div className="textDescription">
                 <p>{item.product}</p>
                 <p>${item.price}</p>

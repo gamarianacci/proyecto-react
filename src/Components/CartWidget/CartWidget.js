@@ -4,9 +4,9 @@ import "./CartWidget.css"
 
 const CartWidget = () => {
     return (
-        <a>
+        <>
             <i className="bi bi-cart"></i>
-        </a>
+        </>
     )
 }
 
