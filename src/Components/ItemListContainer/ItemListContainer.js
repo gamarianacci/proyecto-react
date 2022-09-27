@@ -1,6 +1,5 @@
 import React from "react"
 import ItemList from "../ItemList/ItemList"
-import ItemCount from "../ItemCount/ItemCount"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { products } from "../../assets/products"
@@ -31,10 +30,6 @@ const ItemListContainer = ({ greeting }) => {
             })
     }, [categoryId])
 
-    const onAdd = (contador) => {
-        console.log("Cantidad de productos agregados al carrito:" + contador)
-    }
-
     return (
         <>
             <h1>
@@ -47,9 +42,6 @@ const ItemListContainer = ({ greeting }) => {
                         :
                         <ItemList listProducts={listProducts} />
                 }
-            </section>
-            <section>
-                <ItemCount stock={20} initial={1} onAdd={onAdd} />
             </section>
         </>
     )
