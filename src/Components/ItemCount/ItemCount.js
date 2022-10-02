@@ -17,7 +17,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    const agregarCarrito = () => {
+    const agregarCarrito = (contador) => {
         setContador(initial);
         onAdd(contador);
     }
