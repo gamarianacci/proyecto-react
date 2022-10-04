@@ -10,9 +10,9 @@ const ItemDetail = ({ item }) => {
     const [compra, setCompra] = useState(true)
     const { addItem } = useContext(CartContext)
 
-    const onAdd = (quantity) => {
-        addItem(item, quantity)
+    const onAdd = (item, contador) => {
         setCompra(false)
+        addItem(item, contador)
     }
 
     return (
@@ -28,7 +28,7 @@ const ItemDetail = ({ item }) => {
             <div>
                 {
                     compra ?
-                        <ItemCount stock={20} initial={1} onAdd={onAdd} />
+                        <ItemCount stock={20} initial={1} onAdd={onAdd} item={item}/>
                         :
                         <div className="count">
                             <Link to="/cart">

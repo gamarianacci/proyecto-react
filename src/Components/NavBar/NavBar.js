@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import logo from "../../assets/logo.png";
@@ -14,7 +14,7 @@ const NavBar = () => {
         <header>
             <Navbar variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/">
+                    <Link to="/">
                         <img
                             alt="logo"
                             src={logo}
@@ -22,17 +22,17 @@ const NavBar = () => {
                             height="100"
                         />
                         GM COMIDAS
-                    </Navbar.Brand>
+                    </Link>
                     <Link to="/cart">
                         <CartWidget />
                     </Link>
                     <Navbar.Toggle className="textoClaro" aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link className="textoClaro" href="/category/hamburguesas">Hamburguesas</Nav.Link>
-                            <Nav.Link className="textoClaro" href="/category/pizzas">Pizzas</Nav.Link>
-                            <Nav.Link className="textoClaro" href="/category/wraps">Wraps</Nav.Link>
-                            <Nav.Link className="textoClaro" href="/category/bebidas">Bebidas</Nav.Link>
+                            <NavLink className="textoClaro" to="/category/hamburguesas">Hamburguesas</NavLink>
+                            <NavLink className="textoClaro" to="/category/pizzas">Pizzas</NavLink>
+                            <NavLink className="textoClaro" to="/category/wraps">Wraps</NavLink>
+                            <NavLink className="textoClaro" to="/category/bebidas">Bebidas</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

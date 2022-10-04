@@ -10,6 +10,8 @@ nav{
     color: #F8F8F8;
     font-family: "Verdana";
     font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .textoClaro:hover{
