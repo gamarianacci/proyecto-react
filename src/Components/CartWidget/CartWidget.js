@@ -8,11 +8,19 @@ const CartWidget = () => {
 
     const {cart} = useContext(CartContext)
 
+    const precioTotal = (array) => {
+        let sum = 0
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i].quantity;
+        }
+        return sum
+    }
+
     return (
-        <>
-            <i className="bi bi-cart"></i>
-            {cart.length}
-        </>
+        <div className="cartIcon">
+            <i className="bi-cart"></i>
+            {cart.length !== 0 ? precioTotal(cart) : ""}
+        </div>
     )
 }
 

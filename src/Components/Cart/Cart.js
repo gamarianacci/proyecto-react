@@ -1,28 +1,45 @@
 import React from "react"
 import { useContext } from "react"
 import { CartContext } from "../CartContext/CartContext"
+import { Link } from "react-router-dom"
+import "./Cart.css"
 
 export const Cart = () => {
 
     const { cart, removeItem, clear } = useContext(CartContext)
-    console.log(cart)
+
+
+    const precioTotal = (array) => {
+        let sum = 0
+        for (let i = 0; i < array.length; i++) {
+            sum += (array[i].item.price)*(array[i].quantity);
+        }
+        return sum
+    }
 
     return (
         <>
             <h2>CART</h2>
-            {cart.length !== 0 ? 
-            cart.map(({ item }) => (
-                <div key={item.id}>
-                    <p>{item.product}</p>
-                    <p>{(cart[item.id]).quantity}</p>
-                    <button onClick={() => removeItem(item)} >Quitar</button>
-                    <button onClick={() => clear(item)} >Vaciar Carrito</button>
-                </div>
-            ))
-            :
             <div>
-                <p>Carrito Vacio</p>
-            </div>}
+                {cart.length !== 0 ?
+                    cart.map(({ item, quantity }) => (
+                        <div className="cartStyle" key={item.id}>
+                            <p>{quantity}</p>
+                            <p>{item.product}</p>
+                            <p>Precio: ${item.price}</p>
+                            <button className="button2" onClick={() => removeItem(item)} >Quitar</button>
+                        </div>
+                    ))
+                    :
+                    <div className="cartStyleEmpty">
+                        <p>No hay productos en el carrito</p>
+                        <Link className="cartLink" to="/">
+                            <button className="buttonCompraYa">Ir a Comprar</button>
+                        </Link>
+                    </div>}
+            </div>
+            <p className="cartTotal">Total: ${precioTotal(cart)}</p>
+            <button className="buttonEmptyCart" onClick={() => clear()} >Vaciar Carrito</button>
         </>
     )
 }

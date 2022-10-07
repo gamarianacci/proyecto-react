@@ -14,7 +14,7 @@ const NavBar = () => {
         <header>
             <Navbar variant="dark" expand="lg">
                 <Container>
-                    <Link to="/">
+                    <Link className="textoClaro" to="/">
                         <img
                             alt="logo"
                             src={logo}
