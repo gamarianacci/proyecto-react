@@ -1,41 +1,49 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../../assets/products"
-import ItemDetail from "../ItemDetail/ItemDetail"; 
+import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from 'react-bootstrap/Spinner';
+import { db } from "../../firebase/firebase";
+import { doc, getDoc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
-    const getItem = (item) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(item)
-            }, 2000)
-        })
-    }
-
-    const {id} = useParams()
+    const { id } = useParams()
     const [detailProduct, setDetailProduct] = useState([])
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
 
     useEffect(() => {
-        getItem(products[parseInt(id)])
-            .then(res => {
+
+        const productCollection = collection(db, "products")
+        const refDoc = doc(productCollection, id)
+        getDoc(refDoc)
+            .then((result) => {
+                setDetailProduct(
+                    {
+                        id: result.id,
+                        ...result.data()
+                    }
+                )
+            })
+            .catch(() => {
+                setError(true)
+            })
+            .finally(() => {
                 setLoading(false)
-                setDetailProduct(res)
             })
     }, [id])
 
     return (
         <>
             <section>
-                {
-                    loading ?
-                        <Spinner animation="border" variant="light" />
-                        :
-                        <ItemDetail item={detailProduct} />
-                }
+                {loading ? (
+                    <Spinner animation="border" variant="light" />
+                ) : error ? (
+                    <h1>Ha ocurrido un error</h1>
+                ) : (
+                    <ItemDetail item={detailProduct} />
+                )}
             </section>
         </>
     )
