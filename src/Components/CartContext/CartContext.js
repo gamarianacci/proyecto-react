@@ -26,8 +26,16 @@ const CartProvider = ({ children }) => {
         setCart([])
     }
 
+    const precioTotal = (array) => {
+        let sum = 0
+        for (let i = 0; i < array.length; i++) {
+            sum += (array[i].item.price)*(array[i].quantity);
+        }
+        return sum
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clear, precioTotal }}>
             {children}
         </CartContext.Provider>
     )

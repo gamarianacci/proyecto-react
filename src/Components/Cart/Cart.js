@@ -6,16 +6,7 @@ import "./Cart.css"
 
 export const Cart = () => {
 
-    const { cart, removeItem, clear } = useContext(CartContext)
-
-
-    const precioTotal = (array) => {
-        let sum = 0
-        for (let i = 0; i < array.length; i++) {
-            sum += (array[i].item.price)*(array[i].quantity);
-        }
-        return sum
-    }
+    const { cart, removeItem, clear, precioTotal } = useContext(CartContext)
 
     return (
         <>
@@ -40,6 +31,9 @@ export const Cart = () => {
             </div>
             <p className="cartTotal">Total: ${precioTotal(cart)}</p>
             <button className="buttonEmptyCart" onClick={() => clear()} >Vaciar Carrito</button>
+            <Link to={'/checkout'}>
+                <button>Finalizar Compra</button>
+            </Link>
         </>
     )
 }
