@@ -1,10 +1,10 @@
-# E-COMMERCE
+# PROYECTO E-COMMERCE
 
-## GM COMIDAS
+## GM Comidas
 
-Proyecto de e-commerce para comercio de comidas
+Proyecto de e-commerce para comercio de comidas desarrollado con React JS
 
-## DEPENDENCIAS EXTRA UTILIZADAS
+## Dependencias Extra Utilizadas
 
--React Bootstrap (para menú hamburguesa)
--Bootstrap Icons
+* React Bootstrap (para menú hamburguesa)
+* Bootstrap Icons
