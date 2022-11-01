@@ -60,9 +60,11 @@ export function Checkout() {
     return (
         <>
             {ventaId ?
-                <h2 className="formatoH2">Tu pedido ha sido realizado. Te vamos a contactar a la brevedad para definir método de pago y envío. El ID de tu compra es: {ventaId}.
-                    Hacé click <Link to={'/'}>acá</Link> para seguir comprando.
-                </h2>
+                <div>
+                    <h2 className="formatoH2">Tu pedido ha sido realizado. Te vamos a contactar a la brevedad para definir método de pago y envío. El ID de tu compra es: </h2>
+                    <p className="formatoVentaId">{ventaId}</p>
+                    <p className="formatoLink">Hacé click <Link to={'/'}>acá</Link> para seguir comprando.</p>
+                </div>
                 :
                 <form className="formatoForm" onSubmit={datosVenta}>
                     <label className="formatoLabel" htmlFor="">Nombre Completo:
