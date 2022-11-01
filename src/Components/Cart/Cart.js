@@ -32,7 +32,7 @@ export const Cart = () => {
             <p className="cartTotal">Total: ${precioTotal(cart)}</p>
             <button className="buttonEmptyCart" onClick={() => clear()} >Vaciar Carrito</button>
             <Link to={'/checkout'}>
-                <button>Finalizar Compra</button>
+                <button className="buttonEmptyCart">Finalizar Compra</button>
             </Link>
         </>
     )

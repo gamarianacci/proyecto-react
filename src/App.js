@@ -6,6 +6,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import { Cart } from "./Components/Cart/Cart"
 import CartProvider from "./Components/CartContext/CartContext"
 import { Checkout } from "./Components/Checkout/Checkout"
+import {Error404} from "./Components/Error404/Error404"
 
 const App = () => {
   const conocerProductos = "¡Conocé nuestros productos!"
@@ -16,11 +17,12 @@ const App = () => {
           <NavBar />
           <main>
             <Routes>
-              <Route path="/" element={<ItemListContainer greeting={conocerProductos} />} />
-              <Route path="/category/:categoryId" element={<ItemListContainer greeting={conocerProductos} />} />
-              <Route path="/item/:id" element={<ItemDetailContainer />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path='/checkout' element={<Checkout /> }/>
+              <Route exact path="/" element={<ItemListContainer greeting={conocerProductos} />} />
+              <Route exact path="/category/:categoryId" element={<ItemListContainer greeting={conocerProductos} />} />
+              <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+              <Route exact path="/cart" element={<Cart />} />
+              <Route exact path='/checkout' element={<Checkout />} />
+              <Route path="*" element={<Error404/>} />
             </Routes>
           </main>
         </BrowserRouter>

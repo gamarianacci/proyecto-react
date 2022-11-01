@@ -1,0 +1,37 @@
+.formatoForm {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.formatoH2 {
+    margin-top: 50px;
+    background-color: #F7C873;
+    height: 100vh;
+}
+
+.formatoLabel {
+    width: auto;
+    font-size: 2rem;
+    margin: 20px;
+}
+
+.formatoInput {
+    height: auto;
+    width: 300px;
+    font-size: 1.5rem;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.formatoButton {
+    background-color: #434343;
+    color: #F8F8F8;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 160px;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

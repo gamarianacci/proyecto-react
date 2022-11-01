@@ -5,6 +5,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from 'react-bootstrap/Spinner';
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
+import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
 
@@ -36,7 +37,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <section>
+            <section className="formatoSection">
                 {loading ? (
                     <Spinner animation="border" variant="light" />
                 ) : error ? (
