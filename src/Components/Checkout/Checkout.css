@@ -4,15 +4,24 @@
     height: 100vh;
 }
 
+.formatoDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
 .formatoH2 {
     flex-wrap: wrap;
     margin-top: 100px;
     background-color: #F7C873;
     font-size: 2rem;
+    width: 80%;
 }
 
 .formatoVentaId {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    width: 80%;
 }
 
 .formatoLink {
